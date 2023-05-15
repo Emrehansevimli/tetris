@@ -1,0 +1,5 @@
+C:\Users\emrehan\source\repos\Wpfproje\Wpfproje\obj\Debug\net6.0-windows\Wpfproje.csproj.AssemblyReference.cache
+C:\Users\emrehan\source\repos\Wpfproje\Wpfproje\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\emrehan\source\repos\Wpfproje\Wpfproje\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\emrehan\source\repos\Wpfproje\Wpfproje\obj\Debug\net6.0-windows\Wpfproje_MarkupCompile.cache
+C:\Users\emrehan\source\repos\Wpfproje\Wpfproje\obj\Debug\net6.0-windows\Wpfproje_MarkupCompile.lref
