@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\emrehan\\source\\repos\\Wpfproje\\Wpfproje\\Wpfproje.csproj",
+      "projectUniqueName": "C:\\Users\\emrehan\\source\\repos\\Wpfproje\\tetris\\Wpfproje\\Wpfproje.csproj",
       "projectName": "Wpfproje",
-      "projectPath": "C:\\Users\\emrehan\\source\\repos\\Wpfproje\\Wpfproje\\Wpfproje.csproj",
+      "projectPath": "C:\\Users\\emrehan\\source\\repos\\Wpfproje\\tetris\\Wpfproje\\Wpfproje.csproj",
       "packagesPath": "C:\\Users\\emrehan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\emrehan\\source\\repos\\Wpfproje\\Wpfproje\\obj\\",
+      "outputPath": "C:\\Users\\emrehan\\source\\repos\\Wpfproje\\tetris\\Wpfproje\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\emrehan\\AppData\\Roaming\\NuGet\\NuGet.Config",
