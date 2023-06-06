@@ -30,7 +30,6 @@ namespace Tetris
         private System.Windows.Controls.Label[,] BlockControls;
         static private Brush NoBrush = Brushes.Transparent;
         static private Brush SilverBrush = Brushes.Gray;
-
         public board(Grid TetrisGrid)
         {
             Rows = TetrisGrid.RowDefinitions.Count;
@@ -48,7 +47,6 @@ namespace Tetris
                     Grid.SetRow(BlockControls[i, j], j);
                     Grid.SetColumn(BlockControls[i, j], i);
                     TetrisGrid.Children.Add(BlockControls[i, j]);
-
                 }
             }
             currTetramina = new Tetramina();
@@ -57,7 +55,6 @@ namespace Tetris
         public int getScore()
         {
             return Score;
-
         }
         public int getLines()
         {
@@ -104,7 +101,6 @@ namespace Tetris
                     LinesFilled += 1;
                 }
             }
-
         }
         private void RemoveRow(int row)
         {
@@ -138,7 +134,6 @@ namespace Tetris
             {
                 currTetramina.movleft();
                 currTetraminaDraw();
-
             }
             else
             {
@@ -167,7 +162,6 @@ namespace Tetris
             {
                 currTetramina.movright();
                 currTetraminaDraw();
-
             }
             else
             {
@@ -196,7 +190,6 @@ namespace Tetris
             {
                 currTetramina.movdown();
                 currTetraminaDraw();
-
             }
             else
             {
@@ -221,7 +214,6 @@ namespace Tetris
                 if (((int)((S[i].Y + Position.Y) + 2)) >= Rows)
                 {
                     move = false;
-
                 }
                 else if (((int)(S[i].X + Position.X) + ((Cols / 2) - 1)) < 0)
                 {
@@ -241,7 +233,6 @@ namespace Tetris
             {
                 currTetramina.movrotate();
                 currTetraminaDraw();
-
             }
             else
             {
@@ -256,7 +247,6 @@ namespace Tetris
         private Point[] currShape;
         private Brush currColor;
         private bool rotate;
-
         public Tetramina()
         {
             currPosition = new Point(0, 0);
@@ -300,9 +290,6 @@ namespace Tetris
 
             }
         }
-
-
-
         private Point[] SetRandomShape()
         {
             Random rand = new Random();
@@ -317,7 +304,6 @@ namespace Tetris
                         new Point(-1,0),
                         new Point(1,0),
                         new Point(2,0)
-
                     };
                 case 1://J
                     rotate = true;
@@ -328,7 +314,6 @@ namespace Tetris
                         new Point(-1,0),
                         new Point(0,0),
                         new Point(1,0)
-
                     };
                 case 2://L 
                     rotate = true;
@@ -339,7 +324,6 @@ namespace Tetris
                         new Point(-1,0),
                         new Point(1,0),
                         new Point(1,-1)
-
                     };
                 case 3://O
                     rotate = false;
@@ -350,7 +334,6 @@ namespace Tetris
                         new Point(1,0),
                         new Point(0,1),
                         new Point(1,1)
-
                     };
                 case 4://S
                     rotate = true;
@@ -361,7 +344,6 @@ namespace Tetris
                         new Point(-1,0),
                         new Point(0,-1),
                         new Point(1,0)
-
                     };
                 case 5://T
                     rotate = true;
@@ -372,7 +354,6 @@ namespace Tetris
                         new Point(-1,0),
                         new Point(0,1),
                         new Point(1,1)
-
                     };
                 case 6://Z
                     rotate = true;
@@ -383,19 +364,12 @@ namespace Tetris
                         new Point(1,0),
                         new Point(0,1),
                         new Point(-1,1)
-
                     };
                 default:
                     return null;
             }
         }
     }
-
-
-
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         DispatcherTimer Timer;
@@ -403,11 +377,7 @@ namespace Tetris
         public MainWindow()
         {
             InitializeComponent();
-            
         }
-        
-        
-
         void MainWindow_Initilized(object sender, EventArgs e)
         {
             Timer = new DispatcherTimer();
@@ -420,14 +390,12 @@ namespace Tetris
             MainGrid.Children.Clear();
             myBoard = new board(MainGrid);
             Timer.Start();
-
         }
         void GameTick(object sender, EventArgs e)
         {
             Scores.Content = myBoard.getScore().ToString("0000000000");
             Lines.Content = myBoard.getLines().ToString("0000000000");
             myBoard.CurrtetraminamoveDown();
-
         }
         private void GamePause()
         {
@@ -456,7 +424,6 @@ namespace Tetris
                 case Key.F3:
                     GamePause();
                     break;
-
                 default:
                     break;
             }
