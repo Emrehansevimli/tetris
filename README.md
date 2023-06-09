@@ -57,28 +57,28 @@ stack panelin içinede `<Label Content="Label" Height="56" x:Name="Scores" FontS
  
 Girdiğimizde hazır gelen c# kütüphaneler yeterli olcaktır aynen kalabilir.`namespace`in içine public olacak şekilde board sınıfı oluşturuyoruz.
 'Rows','cols','scores', gibi bazı gerekli değişkenleri tanımlıyoruz yeri geldikce ekleme yapın yeni değişkenler ekleyin.
-<sub> * public board(Grid TetrisGrid)
-       * {
-        *    Rows = TetrisGrid.RowDefinitions.Count;
-         *   Cols = TetrisGrid.ColumnDefinitions.Count;
-          *  Score = 0;
-          *  BlockControls = new System.Windows.Controls.Label[Cols, Rows];
-            for (int i = 0; i < Cols; i++)
-           * {
-           *     for (int j = 0; j < Rows; j++)
-             *   {
-              *      BlockControls[i, j] = new System.Windows.Controls.Label();
-               *     BlockControls[i, j].Background = NoBrush;
-                *    BlockControls[i, j].BorderBrush = SilverBrush;
-                 *   BlockControls[i, j].BorderThickness = new Thickness(1, 1, 1, 1);
-                 *   Grid.SetRow(BlockControls[i, j], j);
-                  *  Grid.SetColumn(BlockControls[i, j], i);
-                  *  TetrisGrid.Children.Add(BlockControls[i, j]);
-              * }
-           * }
-          *  currTetramina = new Tetramina();
-           * currTetraminaDraw();
-        *}</sub>
+<sub> 1. public board(Grid TetrisGrid)
+      2.{
+      3.    Rows = TetrisGrid.RowDefinitions.Count;
+      4.   Cols = TetrisGrid.ColumnDefinitions.Count;
+      5.     Score = 0;
+      6.      BlockControls = new System.Windows.Controls.Label[Cols, Rows];
+      7.     for (int i = 0; i < Cols; i++)
+      8.     {
+      9.        for (int j = 0; j < Rows; j++)
+      10.        {
+      11.              BlockControls[i, j] = new System.Windows.Controls.Label();
+      12.              BlockControls[i, j].Background = NoBrush;
+      13.              BlockControls[i, j].BorderBrush = SilverBrush;
+      14.              BlockControls[i, j].BorderThickness = new Thickness(1, 1, 1, 1);
+      15.              Grid.SetRow(BlockControls[i, j], j);
+      16.              Grid.SetColumn(BlockControls[i, j], i);
+      17.              TetrisGrid.Children.Add(BlockControls[i, j]);
+      18.        }
+      19.      }
+      20.      currTetramina = new Tetramina();
+      21.      currTetraminaDraw();
+      22.  }</sub>
    Bu kod bloğu, `board` sınıfının yapıcı (constructor) metodu olarak tanımlanmıştır. Bu metot, `TetrisGrid` adında bir `Grid` kontrolü alır ve tetris oyun tahtasını oluşturmak için kullanılır.
 
 İlk olarak, `Rows` ve `Cols` değişkenleri `TetrisGrid` kontrolünün `RowDefinitions` ve `ColumnDefinitions` koleksiyonlarının sayılarını alarak belirlenir. Bu sayılar, tetris tahtasının satır ve sütun sayılarını temsil eder.
