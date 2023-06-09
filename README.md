@@ -57,7 +57,8 @@ stack panelin içinede `<Label Content="Label" Height="56" x:Name="Scores" FontS
  
 Girdiğimizde hazır gelen c# kütüphaneler yeterli olcaktır aynen kalabilir.`namespace`in içine public olacak şekilde board sınıfı oluşturuyoruz.
 'Rows','cols','scores', gibi bazı gerekli değişkenleri tanımlıyoruz yeri geldikce ekleme yapın yeni değişkenler ekleyin.
-<sub> 1. public board(Grid TetrisGrid)
+```
+   1. public board(Grid TetrisGrid)
       2.{
       3.    Rows = TetrisGrid.RowDefinitions.Count;
       4.   Cols = TetrisGrid.ColumnDefinitions.Count;
@@ -78,7 +79,8 @@ Girdiğimizde hazır gelen c# kütüphaneler yeterli olcaktır aynen kalabilir.`
       19.      }
       20.      currTetramina = new Tetramina();
       21.      currTetraminaDraw();
-      22.  }</sub>
+      22.  }
+   ```
    Bu kod bloğu, `board` sınıfının yapıcı (constructor) metodu olarak tanımlanmıştır. Bu metot, `TetrisGrid` adında bir `Grid` kontrolü alır ve tetris oyun tahtasını oluşturmak için kullanılır.
 
 İlk olarak, `Rows` ve `Cols` değişkenleri `TetrisGrid` kontrolünün `RowDefinitions` ve `ColumnDefinitions` koleksiyonlarının sayılarını alarak belirlenir. Bu sayılar, tetris tahtasının satır ve sütun sayılarını temsil eder.
