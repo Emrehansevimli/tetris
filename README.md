@@ -34,3 +34,15 @@ Kodların içindeki sınıflar,özelikleri,pencereler gibi bazı işlevlerin sö
    - `GameTick()`, oyun süresi ilerledikçe çağrılan bir olay işleyicisidir. Tahtadaki skoru ve dolu satır sayısını günceller ve mevcut tetraminayı aşağı hareket ettirir.
    - `GamePause()`, oyunu duraklatır veya devam ettirir.
    - `HandleKeyDown()`, klavye tuşlarına basıldığında çağrılan bir olay işleyicisidir. Tuşlara göre tetraminayı hareket
+
+
+projemizi wdf platformunda yapcaz visual stiduo da bulması biraz "wdf uygulaması",etiketinde ise "c#","windows","masaüstü" olacaktır.
+doğru yerde projemizi oluşturduğumuzan emin olduktan sonra ,Mainwindow.Xaml penceresine geliyoruz burası işin tasarım kısmı tasarımı yapıcaz öncelikle,
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+
+
+<frameset>
+ asdasdasdas
+</frameset>
+
