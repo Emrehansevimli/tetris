@@ -36,13 +36,8 @@ Kodların içindeki sınıflar,özelikleri,pencereler gibi bazı işlevlerin sö
    - `HandleKeyDown()`, klavye tuşlarına basıldığında çağrılan bir olay işleyicisidir. Tuşlara göre tetraminayı hareket
 
 
-projemizi wdf platformunda yapcaz visual stiduo da bulması biraz "wdf uygulaması",etiketinde ise "c#","windows","masaüstü" olacaktır.
+projemizi wdf platformunda yapcaz visual stiduo da bulması biraz "wdf uygulaması",etiketinde ise `"c#","windows","masaüstü"` olacaktır.
 doğru yerde projemizi oluşturduğumuzan emin olduktan sonra ,Mainwindow.Xaml penceresine geliyoruz burası işin tasarım kısmı tasarımı yapıcaz öncelikle,
-xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-
-
-<frameset>
- asdasdasdas
-</frameset>
+`xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"`
+`xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"`
 
