@@ -159,7 +159,7 @@ Bu işlemler sonucunda, `currTetramina` örneğinin şekline göre oyun tahtası
             }
         }
 ```
-                                         Bu metodun amacı, `CheckRows` adında bir özel metot olarak tanımlanmıştır. Bu metot, oyun tahtasındaki satırları kontrol eder ve dolu olan satırları kaldırır.
+Bu metodun amacı, `CheckRows` adında bir özel metot olarak tanımlanmıştır. Bu metot, oyun tahtasındaki satırları kontrol eder ve dolu olan satırları kaldırır.
 
 Metot, bir `for` döngüsü kullanarak yukarıdan aşağıya doğru satırları kontrol eder. İlk satır (indeks 0) kontrol edilmez, çünkü oyun tahtasının en üstünde yer alan bir satır olduğu düşünülür.
 
@@ -178,7 +178,8 @@ Eğer `full` değişkeni hala `true` ise, bu demektir ki o satır doludur. Dolu 
                 }
             }
         }                                     
-```    Bu `RemoveRow` adlı özel metot, belirli bir satırın kaldırılmasını sağlar. Parametre olarak kaldırılacak satırın indeksi (`row`) alınır.
+```
+Bu `RemoveRow` adlı özel metot, belirli bir satırın kaldırılmasını sağlar. Parametre olarak kaldırılacak satırın indeksi (`row`) alınır.
 Metot, bir `for` döngüsü kullanarak `row` indeksinden başlayarak 2 ye kadar olan (dahil olmayan) satırları aşağıya doğru iter. Her bir satır için, bir iç içe `for` döngüsü kullanılarak sütunlar kontrol edilir.
 Her bir sütun için, `BlockControls[j, i].Background` değeri, bir üst satırdaki (`i - 1`) aynı sütundaki arkaplan rengine eşitlenir. Böylece, bir üst satırdaki blokların rengi, altındaki boşluğa yerleştirilmiş gibi görünür.
                                          
@@ -212,7 +213,7 @@ Her bir sütun için, `BlockControls[j, i].Background` değeri, bir üst satırd
             }
         }                                      
 ``` 
-   Bu `CurrtetraminamoveLeft` adlı yöntem, mevcut tetraminanın sola hareketini gerçekleştirir. İşlem sırasında mevcut tetraminanın pozisyonu (`Position`) ve şekli (`Shape`) alınır. İlk olarak, hareketin mümkün olup olmadığını kontrol etmek için bir dizi koşul denetlenir.
+Bu `CurrtetraminamoveLeft` adlı yöntem, mevcut tetraminanın sola hareketini gerçekleştirir. İşlem sırasında mevcut tetraminanın pozisyonu (`Position`) ve şekli (`Shape`) alınır. İlk olarak, hareketin mümkün olup olmadığını kontrol etmek için bir dizi koşul denetlenir.
 
 Önce, her bir şeklin sol tarafındaki blokların tahtanın sol kenarına çarpmayacağını kontrol ederiz. Bunun için, `((int)(S.X + Position.X) + ((Cols / 2) - 1) - 1) < 0` koşulunu kontrol ederiz. Eğer bu koşul sağlanıyorsa (`true`), hareketi engellemek için `move` değişkenini `false` olarak ayarlarız.
 
@@ -252,7 +253,7 @@ public void CurrtetraminamoveDown()
             }
         }
 ```
-   Bu `CurrtetraminamoveDown` adlı yöntem, mevcut tetraminanın aşağı doğru hareketini gerçekleştirir. İşlem sırasında mevcut tetraminanın pozisyonu (`Position`) ve şekli (`Shape`) alınır. İlk olarak, hareketin mümkün olup olmadığını kontrol etmek için bir dizi koşul denetlenir.
+Bu `CurrtetraminamoveDown` adlı yöntem, mevcut tetraminanın aşağı doğru hareketini gerçekleştirir. İşlem sırasında mevcut tetraminanın pozisyonu (`Position`) ve şekli (`Shape`) alınır. İlk olarak, hareketin mümkün olup olmadığını kontrol etmek için bir dizi koşul denetlenir.
 
 Önce, her bir şeklin alt tarafındaki blokların tahtanın alt kenarına çarpmayacağını kontrol ederiz. Bunun için, `((int)(S.Y + Position.Y) + 2 + 1) >= Rows` koşulunu kontrol ederiz. Eğer bu koşul sağlanıyorsa (`true`), hareketi engellemek için `move` değişkenini `false` olarak ayarlarız.
 
@@ -307,7 +308,7 @@ Ayrıca, hareket mümkün değilse, `currTetraminaDraw()` çağrısıyla tetrami
     }
 
 ```   
-   Bu `CurrtetraminamoveRotate` adlı yöntem, mevcut tetraminanın döndürme hareketini gerçekleştirir. İşlem sırasında mevcut tetraminanın pozisyonu (`Position`) ve şekli (`Shape`) alınır. Bir dizi koordinat (`S`) oluşturulur ve mevcut şekil `Shape` bu diziye kopyalanır. Daha sonra, mevcut tetramina tahtadan silinir (`currTetraminaErase()` çağrısı).
+Bu `CurrtetraminamoveRotate` adlı yöntem, mevcut tetraminanın döndürme hareketini gerçekleştirir. İşlem sırasında mevcut tetraminanın pozisyonu (`Position`) ve şekli (`Shape`) alınır. Bir dizi koordinat (`S`) oluşturulur ve mevcut şekil `Shape` bu diziye kopyalanır. Daha sonra, mevcut tetramina tahtadan silinir (`currTetraminaErase()` çağrısı).
 
 Döndürme işlemi, her bir şekil noktasının koordinatlarının dönüştürülmesiyle gerçekleştirilir. Her bir noktanın `X` koordinatı `Y` koordinatının negatif değeriyle, `Y` koordinatı ise `X` koordinatıyla değiştirilir. Döndürme işlemi sonrasında, her bir dönüştürülmüş noktanın hareketin mümkün olup olmadığını kontrol etmek için bir dizi koşul denetlenir.
 
@@ -317,9 +318,7 @@ Daha sonra, her bir noktanın tahtanın sol veya sağ kenarlarına çarpmayacağ
 
 Son olarak, her bir noktanın dönüştürüldükten sonra yeni konumunda başka bir blokla çakışıp çakışmadığını kontrol ederiz. Bunun için, `BlockControls[((int)(S[i].X + Position.X) + ((Cols / 2) - 1)), (int)(S[i].Y + Position.Y) + 2].Background != NoBrush` koşulunu kontrol ederiz. Eğer bu koşul sağlanıyorsa (`true`), döndürme işlemini engellemek için `move` değişkenini `false` olarak ayarlarız.
 
-Koşulların değerlendirilmesinden sonra, `move` değişkeni kontrol edilir. Eğer `move` `true` ise, tetramina döndürülür (`currTetramina.movrotate()`) ve `currTetraminaDraw()` çağrısı ile gü
-
-ncellenmiş tetramina tahta üzerine çizilir. Eğer `move` `false` ise, tetramina sadece çizilir ve döndürme işlemi gerçekleştirilmez.
+Koşulların değerlendirilmesinden sonra, `move` değişkeni kontrol edilir. Eğer `move` `true` ise, tetramina döndürülür (`currTetramina.movrotate()`) ve `currTetraminaDraw()` çağrısı ile güncellenmiş tetramina tahta üzerine çizilir. Eğer `move` `false` ise, tetramina sadece çizilir ve döndürme işlemi gerçekleştirilmez.
 
 Bu şekilde, `CurrtetraminamoveRotate` yöntemi mevcut tetraminanın döndürme hareketini gerçekleştirir.
 açık olcak şekilde yeni tetramina adında bir sınıf oluşturuyoruz.Burda yukardan incek şekilleri oluşturcaz.
@@ -345,7 +344,7 @@ açık olcak şekilde yeni tetramina adında bir sınıf oluşturuyoruz.Burda yu
             }
         }
    ```
-                                                     Bu `movrotate` adlı yöntem, mevcut tetraminanın döndürme işlemi gerçekleştirmek için kullanılır. İşlem sırasında tetraminanın şeklini temsil eden `currShape` dizisi üzerinde döngü oluşturulur. Her bir şekil noktasının `X` ve `Y` koordinatları değiştirilerek dönüş işlemi gerçekleştirilir.
+Bu `movrotate` adlı yöntem, mevcut tetraminanın döndürme işlemi gerçekleştirmek için kullanılır. İşlem sırasında tetraminanın şeklini temsil eden `currShape` dizisi üzerinde döngü oluşturulur. Her bir şekil noktasının `X` ve `Y` koordinatları değiştirilerek dönüş işlemi gerçekleştirilir.
 
 Döndürme işlemi için her bir noktanın `X` ve `Y` koordinatları değiştirilir. Geçici bir değişken olan `x` oluşturulur ve mevcut noktanın `X` değeri bu değişkene atanır. Ardından, `X` değeri `Y` değerinin negatifini alır ve `Y` değeri `x` değerine atanır. Bu işlem, noktanın saat yönünün tersine dönmesini sağlar.
 
@@ -379,7 +378,7 @@ private Point[] SetRandomShape()
                         new Point(1,0)
                     };
 ```
- toplamda 7 farklı seçenek olcak hepsini bura yazmadım.Bu `SetRandomShape` adlı yöntem, rastgele bir tetramina şekli oluşturmak için kullanılır. `Random` sınıfı kullanılarak bir rastgele sayı oluşturulur ve `switch` ifadesi kullanılarak farklı şekiller oluşturulur.
+toplamda 7 farklı seçenek olcak hepsini bura yazmadım.Bu `SetRandomShape` adlı yöntem, rastgele bir tetramina şekli oluşturmak için kullanılır. `Random` sınıfı kullanılarak bir rastgele sayı oluşturulur ve `switch` ifadesi kullanılarak farklı şekiller oluşturulur.
 
 Her bir `case` durumunda, tetraminanın dönme özelliği (`rotate`) ve rengi (`currColor`) belirlenir. Ardından, `Point` türünde bir dizi döndürülür. Bu dizi, tetraminanın şeklini temsil eden noktaları içerir.
 
@@ -391,7 +390,7 @@ Diğer durumlar için de benzer şekilde tetraminanın şekli, dönme özelliği
 
 Bu yöntem, rastgele bir tetraminanın şeklini ve özelliklerini belirlemek için kullanılır.
 ```
-                                           public partial class MainWindow : Window
+   public partial class MainWindow : Window
     {
         DispatcherTimer Timer;
         board myBoard;
@@ -453,7 +452,7 @@ Bu yöntem, rastgele bir tetraminanın şeklini ve özelliklerini belirlemek iç
 }
                                                     ```
                                                      
-                                                     Bu kod parçası `MainWindow` sınıfını tanımlar ve Tetris oyununun temel işlevselliğini içerir.
+Bu kod parçası `MainWindow` sınıfını tanımlar ve Tetris oyununun temel işlevselliğini içerir.
 
 `MainWindow` sınıfı, `Window` sınıfından türetilmiş ve `partial` olarak işaretlenmiştir. Bu sınıf, Tetris oyununun ana penceresini temsil eder.
 
