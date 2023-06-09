@@ -52,7 +52,7 @@ stack panelin içinede `<Label Content="Label" Height="56" x:Name="Scores" FontS
 `<Grid Name="MainGrid" Height="500" Width="250"></Grid>` grid ızgara demek kolon ve satır oluşturmak tablo yapmak için kullanılır.
 `<Grid.RowDefinitions></Grid.RowDefinitions>` satır oluşturmak için bu kalıbı kullanıyoruz içine `<RowDefinition/>`tan 22 tane ekliyoruz 22 tane satır oluşucak.
 `<Grid.ColumnDefinitions></Grid.ColumnDefinitions>` aynı şekilde kolon oluşturmak içinde aynı şeyler geçerli `<ColumnDefinition/>`da 10 kolon ekliyoruz tetris bloklarının gelceği kareli düzlem hazır.Artık tasarım kısmı bitti Mainwindow.xaml.cs penceresine gecebiliriz.
-   
+ ### board 
  
 Girdiğimizde hazır gelen c# kütüphaneler yeterli olcaktır aynen kalabilir.`namespace`in içine public olacak şekilde board sınıfı oluşturuyoruz.
 'Rows','cols','scores', gibi bazı gerekli değişkenleri tanımlıyoruz yeri geldikce ekleme yapın yeni değişkenler ekleyin.
@@ -321,6 +321,7 @@ Koşulların değerlendirilmesinden sonra, `move` değişkeni kontrol edilir. E�
 
 Bu şekilde, `CurrtetraminamoveRotate` yöntemi mevcut tetraminanın döndürme hareketini gerçekleştirir.
 açık olcak şekilde yeni tetramina adında bir sınıf oluşturuyoruz.Burda yukardan incek şekilleri oluşturcaz.
+### Tetramina
    ```
    private Point currPosition;
         private Point[] currShape;
@@ -388,6 +389,7 @@ Her bir `case` durumunda, tetraminanın dönme özelliği (`rotate`) ve rengi (`
 Diğer durumlar için de benzer şekilde tetraminanın şekli, dönme özelliği ve renkleri belirlenir ve ilgili dizi döndürülür.
 
 Bu yöntem, rastgele bir tetraminanın şeklini ve özelliklerini belirlemek için kullanılır.
+### MainWindow
 ```
    public partial class MainWindow : Window
     {
